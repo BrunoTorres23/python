@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 
 #Pagina inicial
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'dashboard/index.html')
 
 # Home de usuarios
 def home(request):
