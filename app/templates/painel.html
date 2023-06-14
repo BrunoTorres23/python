@@ -1,0 +1,94 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form name="formPainel" id="formPainel" method="post" action="/dologin/">
+    <div class="col-6 mt-4 m-auto">
+        {% if msg %}
+        <div class="alert {{class}}">
+            {{msg}}
+        </div>
+        {% endif %}
+
+        {% csrf_token %}
+        <center>
+            <div class="home">
+                <h1>Login</h1>
+                <input class="form-control mt-4" type="text" name="user" id="user" placeholder="Nome do Usuário:">
+                <input class="form-control mt-4" type="password" name="password" id="password" placeholder="Senha:">
+                <br>
+                <button class="button" type="submit" value="Entrar">Entrar</button>
+                <br>
+            </div>
+        </center>
+</form>
+</div>
+
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    .home {
+        background-color: #cd936d4c;
+        width: 50%;
+        border-radius: 20px;
+        margin: 15%;
+        padding: 3%;
+    }
+
+    h1 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

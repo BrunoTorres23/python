@@ -1,0 +1,724 @@
+{% block content %}
+{% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aulas </title>
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!--Google Fonts poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LINK DO VÍDEO = https://www.youtube.com/watch?v=FaBY9yAUtdg -->
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1">
+            <a href="{% url 'inicial' %}"><img style="width: 19%;" src="../static/img/logo fox.png" class="logo"> </a>
+            <div class="search-bar">
+                <span class="material-icons-sharp primary"> search </span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active dark primary"> light_mode </span>
+                    <span class="material-icons-sharp primary">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <a href="{% url 'config' %}"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                        </a>
+                    </div>
+                    <h5> 968576479@Aluno</h5>
+                    <a href="{% url 'config' %}"> <span class="material-icons-sharp primary"> expand_more </span> </a>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp primary"> menu </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--END OF NAVBAR-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp"> close </span>
+            </button>
+
+            <div class="sidebar">
+                <a href="{% url 'inicial' %}">
+                    <span class="material-icons-sharp"> house </span>
+                    <h4>Home</h4>
+                </a>
+
+                <a href="{% url 'material' %}">
+                    <span class="material-icons-sharp"> article </span>
+                    <h4>Material</h4>
+                </a>
+
+                <a href="{% url 'rendimento' %}">
+                    <span class="material-icons-sharp"> show_chart </span>
+                    <h4>Rendimento</h4>
+                </a>
+
+                <a href="{% url 'aulas' %}" class="active">
+                    <span class="material-icons-sharp"> ondemand_video </span>
+                    <h4>Aulas Disponíveis</h4>
+                </a>
+
+                <a href="{% url 'config' %}">
+                    <span class="material-icons-sharp"> manage_accounts </span>
+                    <h4>Configurações</h4>
+                </a>
+
+                <a href="/logouts/">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h4>Sair / LogOut</h4>
+                </a>
+
+
+            </div>
+
+        </aside>
+        <!--------------------END OF ASIDE------------------->
+        <center>
+            <section>
+
+                <h1> Sequências de aulas </h1>
+
+                <section class="courses">
+                    <div class="container courses_container">
+                        <article class="course">
+                            <div class="course_image">
+                                <img style="height: 275px;"
+                                    src=" https://www.maxieduca.com.br/blog/wp-content/uploads/2017/01/20160606151102_660_420.jpg"
+                                    alt="">
+                            </div>
+                            <div class="course_info">
+                                <h4>HDW</h4>
+                                <p>Hardware</p>
+                                <a href="{% url 'hardware' %}" class="btn btn-primary">Assista Agora</a>
+                            </div>
+                        </article>
+
+                        <article class="course">
+                            <div class="course_image">
+                                <img style="height: 275px;"
+                                    src="https://www.pahcautomacao.com.br/wp-content/uploads/2018/12/Conheca-os-7-beneficios-que-a-automacao-industrial-pode-oferecer-para-a-sua-industria-1.jpg"
+                                    alt="">
+                            </div>
+                            <div class="course_info">
+                                <h4>ATOI</h4>
+                                <p>Automação Industrial </p>
+                                <a href="{% url 'automacao' %}" class="btn btn-primary">Assista Agora</a>
+                            </div>
+                        </article>
+
+                        <article class="course">
+                            <div class="course_image">
+                                <img style="height: 275px;"
+                                    src="https://www.guiadoconstrutor.com.br/assets/uploads/articles/instalacao-eletrica-uma-importante-etapa-da-obra.png"
+                                    alt="">
+                            </div>
+                            <div class="course_info">
+                                <h4>ELE</h4>
+                                <p>Elétrica</p>
+                                <a href="{% url 'eletrica' %}" class="btn btn-primary">Assista Agora</a>
+                            </div>
+                        </article>
+
+                        <article class="course">
+                            <div class="course_image">
+                                <img style="height: 275px;"
+                                    src="https://onmotor.com.br/wp-content/uploads/2022/04/2022-05-25-problemas-de-uma-oficina-mecanica.jpg"
+                                    alt="">
+                            </div>
+                            <div class="course_info">
+                                <h4>MEC</h4>
+                                <p>Mecânica</p>
+                                <a href="{% url 'mecanica' %}" class="btn btn-primary">Assista Agora</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+                <!-- --------------------------------------- end of courses ------------------------------------------------- -->
+
+            </section>
+
+
+    </main>
+    <!--END OF ASIDE-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        // Show or ride hide sidebar
+        const menuBtn = document.querySelector('#menu-btn');
+        const closeBtn = document.querySelector('#close-btn');
+        const sidebar = document.querySelector('aside');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.display = 'block';
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.display = 'none';
+        })
+
+        // change theme
+        const themeBtn = document.querySelector('.theme-btn');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            themeBtn.querySelector('span:first-child').classList.toggle('active');
+
+            themeBtn.querySelector('span:last-child').classList.toggle('active');
+        })
+    </script>
+
+    <style>
+        /*ROOT CSS VARIABLES*/
+        :root {
+            --color-white: #ffffff;
+            --color-light: #f0eff5;
+            --color-gray-light: #86848c;
+            --color-gray-dark: #56555e;
+            --color-dark: #27282f;
+            --color-primary: rgb(230, 110, 19);
+            --color-success: rgb(34, 202, 75);
+            --color-danger: rgb(255, 67, 54);
+            --color-warning: rgb(234, 181, 7);
+            --color-purple: rgb(160, 99, 245);
+
+            --color-primary-light: rgb(230, 110, 19, 0.2);
+            --color-success-light: rgb(34, 202, 75, 0.2);
+            --color-danger-light: rgb(255, 67, 54, 0.2);
+            --color-warning-light: rgb(234, 181, 7, 0.2);
+            --color-purple-light: rgb(160, 99, 245, 0.2);
+
+            --card-padding: 1.6rem;
+            --padding-1: 1rem;
+            --padding-2: 8px;
+
+            --card-border-radius: 1.6rem;
+            --border-radius-1: 1rem;
+            --border-radius-2: 6px;
+        }
+
+        /*DARK THEME*/
+        .dark-theme {
+            --color-white: #131316;
+            --color-light: #23232a;
+            --color-dark: #ddd;
+            --color-gray-dark: #adacb5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            appearance: none;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        body {
+            background: var(--color-light);
+            font-family: poppins, sans-serif;
+            min-height: 100vh;
+            color: var(color --color-dark);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--color-dark);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--color-dark);
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: var(--color-dark);
+        }
+
+        h5 {
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        h6 {
+            font-size: 0.76rem;
+            color: var(--color-dark);
+        }
+
+        p {
+            font-size: 0.86rem;
+            color: var(--color-dark);
+        }
+
+        small {
+            font-weight: 300;
+            font-size: 0.77rem;
+            color: var(--color-dark);
+        }
+
+        .text-muted {
+            color: var(--color-gray-light);
+        }
+
+        .primary {
+            color: var(--color-primary);
+        }
+
+        .danger {
+            color: var(--color-danger);
+        }
+
+        .success {
+            color: var(--color-success);
+        }
+
+        .purple {
+            color: var(--color-purple);
+        }
+
+        .bg-primary {
+            background: var(--color-primary);
+            box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+        }
+
+        .bg-danger {
+            background: var(--color-danger);
+            box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+        }
+
+        .bg-success {
+            background: var(--color-success);
+            box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+        }
+
+        .bg-purple {
+            background: var(--color-purple);
+            box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+        }
+
+        .bg-dark {
+            background: #27282f;
+            box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2rem);
+        }
+
+        /*NAV BAR*/
+        nav {
+            width: 100%;
+            background: var(--color-white);
+            padding: 1rem 0;
+        }
+
+        nav .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        nav img.logo {
+            width: 7rem;
+        }
+
+        nav .search-bar {
+            background: var(--color-light);
+            padding: var(--padding-2) var(--card-padding);
+            width: 32vw;
+            border-radius: var(--border-radius-2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--color-gray-light);
+            position: absolute;
+            left: 15%;
+        }
+
+        nav .search-bar input[type="search"] {
+            color: var(--color-dark);
+            background: transparent;
+            width: 100%;
+        }
+
+        nav .search-bar input[type="search"]::placeholder {
+            color: var(--color-gray-dark);
+        }
+
+        nav .profile-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        nav .profile-area .theme-btn {
+            display: flex;
+            background: var(--color-light);
+            width: 5rem;
+            height: 2rem;
+            border-radius: var(--border-radius-2);
+            cursor: pointer;
+        }
+
+        nav .profile-area .theme-btn span {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        nav .profile-area .theme-btn .active {
+            background: var(--color-dark);
+            border-radius: var(--border-radius-2);
+            color: var(--color-white);
+        }
+
+        nav .profile-area .profile {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        nav .profile-area .profile-photo {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        nav .profile-area button {
+            display: none;
+        }
+
+        /*ASIDE & SIDEBAR*/
+        main {
+            display: grid;
+            grid-template-columns: 16rem auto 4rem;
+            gap: 2rem;
+            width: 96%;
+            margin: 1rem auto 4rem;
+        }
+
+        main aside {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 88vh;
+        }
+
+        /*Will be shown only on mobile and tablets*/
+        main aside button#close-btn {
+            display: none;
+        }
+
+        main aside .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            height: 4.2rem;
+            color: var(--color-gray-light);
+            position: relative;
+        }
+
+        main aside .sidebar a span {
+            font-size: 1.7rem;
+            margin-left: 3rem;
+            transition: all 300ms ease;
+        }
+
+        main aside .sidebar a.active {
+            background: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a.active:before {
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            background: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover {
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover span {
+            margin-left: 2rem;
+        }
+
+        main aside .sidebar h4 {
+            font-weight: 600;
+        }
+
+        /*----------------------------------------------------------MIDDLE----------------------------------*/
+
+        /*BTTN*/
+        .btn {
+            display: inline-block;
+            background: var(--color-white);
+            color: var(--color-black);
+            padding: 1rem 2rem;
+            border: 1px solid transparent;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: #E29351;
+            color: var(--color-white);
+            border-color: var(--color-dark);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        /*News*/
+
+        .courses {
+            margin-top: 1rem;
+        }
+
+        .courses_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .course {
+            background: #7c7c7c31;
+            text-align: center;
+            border: 3px solid rgba(188, 188, 188, 0.652);
+            ;
+            transition: var(--transition);
+        }
+
+        .course:hover {
+            background: #e0ab7a8f;
+            border-color: var(--color-primary);
+        }
+
+        .course_info {
+            padding: 2rem;
+        }
+
+        .course_info p {
+            margin: 1.2rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+
+
+        /* --------------------------------------- MEDIA QUERIES FOR TABLETS ----------------------------------------------*/
+        @media (max-width: 1030px) {
+            nav .search-bar {
+                display: none;
+            }
+
+            nav .profile-area {
+                gap: 2rem;
+            }
+
+            nav .profile-area button#menu-btn {
+                display: inline;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            main aside {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                z-index: 3;
+                background: var(--color-white);
+                width: 22rem;
+                height: 100vh;
+                box-shadow: 2rem 0 2rem var(--color-primary-light);
+                display: none;
+                animation: showSidebar 500ms ease forwards;
+            }
+
+            @keyframes showSidebar {
+                to {
+                    left: 0;
+                }
+
+            }
+
+            main aside button#close-btn {
+                display: inline-block;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                z-index: 4;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+        }
+
+        /* --------------------------------------- MEDIA QUERIES FOR MOBILE PHONES ----------------------------------------------*/
+        @media (max-width:676px) {
+            nav .profile-area {
+                gap: 2.6rem;
+            }
+
+            nav .profile h5,
+            nav .profile span {
+                display: none;
+            }
+
+            main section.right .investment {
+                margin-top: 2rem;
+                gap: 6rem;
+                margin: 2rem;
+            }
+
+            main section.middle .videos {
+                padding-bottom: 1rem;
+            }
+
+            #x {
+                margin-top: 75%;
+            }
+
+        }
+    </style>
+
+</body>
+
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem acesso</title>
+</head>
+
+<body>
+    <center>
+        <h1>Você não tem acesso a essa área.</h1>
+        <h2>Faça o cadastro em nossa plataforma e aproveite mais!</h2>
+        <button class="button" role="button"><span class="text"><a href="{% url 'home' %}">Vá para nossa
+                    plataforma</a></span></button>
+    </center>
+</body>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1,
+    h2 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+
+</html>
+{% endif %}
+
+{% endblock %}

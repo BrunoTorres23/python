@@ -1,0 +1,444 @@
+{% block content %}
+{% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!--Google Fonts poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- LINK DO VÍDEO = https://www.youtube.com/watch?v=FaBY9yAUtdg -->
+    <link rel="stylesheet" href="../static/css/impressora.css" media="print">
+    <link rel="stylesheet" href="../static/css/tela.css" media="screen">
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1">
+            <a href="{% url 'inicial' %}"><img style="width: 19%;" src="../static/img/logo fox.png" class="logo"> </a>
+            <div class="search-bar">
+                <span class="material-icons-sharp primary"> search </span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active dark primary"> light_mode </span>
+                    <span class="material-icons-sharp primary">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <a href="{% url 'config' %}"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                        </a>
+                    </div>
+                    <h5> 968576479@Aluno</h5>
+                    <a href="{% url 'config' %}"> <span class="material-icons-sharp primary"> expand_more </span> </a>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp primary"> menu </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--END OF NAVBAR-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp"> close </span>
+            </button>
+
+            <div class="sidebar">
+                <a href="{% url 'inicial' %}">
+                    <span class="material-icons-sharp"> house </span>
+                    <h4>Home</h4>
+                </a>
+
+                <a href="{% url 'material' %}">
+                    <span class="material-icons-sharp"> article </span>
+                    <h4>Material</h4>
+                </a>
+
+                <a href="{% url 'rendimento' %}">
+                    <span class="material-icons-sharp"> show_chart </span>
+                    <h4>Rendimento</h4>
+                </a>
+
+                <a href="{% url 'aulas' %}">
+                    <span class="material-icons-sharp"> ondemand_video </span>
+                    <h4>Aulas Disponíveis</h4>
+                </a>
+
+                <a href="{% url 'config' %}">
+                    <span class="material-icons-sharp"> manage_accounts </span>
+                    <h4>Configurações</h4>
+                </a>
+
+                <a href="/logouts/">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h4>Sair / LogOut</h4>
+                </a>
+
+
+            </div>
+            <!--END OF SIDEBAR-->
+
+        </aside>
+        <!--------------------END OF ASIDE------------------->
+
+        <section class="middle">
+            <section class="page-wrap">
+
+                <article id="block1" class="module-block">
+
+                    <h1>Taiana Tourinho Costa</h1>
+                    <h3>Identificação Aluno: 968576479 <br> Email para contato: taianatouriAL@gmail.com</h3>
+                    <h2></h2>
+
+
+                    <img class="right"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU"
+                        alt="" />
+
+                    <p> Me chamo TAIANA TOURINHO COSTA, tenho 25 anos e faço o curso técnico de desenvolvimento de
+                        sistemas, tenho em meu curriculo cursos de html, css, js, java, mySql e pacote office, fique
+                        a vontade caso queria conhecer mais sobre meu trabalho por aqui </p>
+                    <br>
+
+                    <li><a href="https://codepen.io/trending"><img class="links"
+                                src="https://cdn-icons-png.flaticon.com/512/9491/9491416.png"></a< /li>
+                    <li><a href="https://www.instagram.com/"><img class="links"
+                                src="https://cdn-icons-png.flaticon.com/512/4138/4138124.png"></a< /li>
+                    <li><a href="https://www.linkedin.com/"><img class="links"
+                                src="https://cdn-icons-png.flaticon.com/128/1377/1377213.png"></a< /li>
+                    <li><a href="https://github.com/"><img class="links"
+                                src="https://cdn-icons-png.flaticon.com/512/270/270798.png"></a< /li>
+                    <li><a href="https://www.facebook.com/"><img class="links"
+                                src="https://cdn-icons-png.flaticon.com/128/3670/3670124.png"></a< /li>
+                </article>
+
+
+                <section id="block2" class="module-block">
+
+                    <h2>Certificados de Taiana</h2>
+
+                    <article class="post">
+                        <h3>
+                            <a href="#">
+                                Google Cloud Foundations
+                                <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/i6f25wkhuwvkcgg4jcux"
+                                    alt="" />
+                            </a>
+                        </h3>
+                        <strong class="date">1.01.2012</strong>
+                        <p>O estudante está preparado para articular os recursos dos principais produtos e serviços do
+                            Google Cloud, desenvolvendo capacidades que possibilitem ao concluinte implementar serviços
+                            de armazenamento e análise de dados, utilizando as principais tecnologias da área
+                            disponíveis nos serviços de nuvem. </a></p>
+                        <h2></h2>
+                    </article>
+
+                    <article class="post">
+                        <h3>
+                            <a href="#">
+                                Excel
+                                <img src="data:image/png;base64,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"
+                                    alt="" />
+                            </a>
+                        </h3>
+                        <strong class="date">01.01.2012</strong>
+                        <p>O estudante está preparado para abordar as possibilidades para resolver problemas básicos de
+                            cálculos com fórmulas e aplicação de funções. </a></p>
+                        <h2></h2>
+                    </article>
+
+                    <article class="post">
+                        <h3>
+                            <a href="#">
+                                AWS
+                                <img src="data:image/jpeg;base64,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"
+                                    alt="" />
+                            </a>
+                        </h3>
+                        <strong class="date">1.01.2012</strong>
+                        <p>O estudante está preparado para desenvolver as competências relativas à implantação e
+                            gerenciamento de serviços em nuvem, por meio dos conteúdos formativos da AWS Foundation.</a>
+                        </p>
+                        <h2></h2>
+                    </article>
+
+                    <article class="post">
+                        <h3>
+                            <a href="#">
+                                Microsoft Azure
+                                <img src="https://www.arelion.com/dam/jcr:8223bf79-458d-4638-98a0-5cf1116d2e13/Azure.png"
+                                    alt="" />
+                            </a>
+                        </h3>
+                        <strong class="date">01.01.2012</strong>
+                        <p>O estudante está apto para desenvolver capacidades que possibilitem ao concluinte implementar
+                            serviços cognitivos de inteligência artificial, utilizando as principais tecnologias da área
+                            disponíveis nos serviços de nuvem.</a></p>
+                        <h2></h2>
+                    </article>
+
+                </section>
+
+
+            </section><!-- page-wrap -->
+
+        </section>
+        <!-- =========================================END OF MIDDLE=============================================-->
+
+        <section class="right">
+
+            <div class="header">
+                <h1>Carteiras Digitais</h1>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                            <h2>Estudante M3DSI</h2>
+                        </div>
+                        <img src="../static/img/img footer.png" class="right">
+                    </div>
+                    <div class="middle">
+                        <h2>Taiana Tourinho Costa</h2>
+                        <img src="https://ohiobitcoin.com/BTC/images/qr-code/qr-code-200px.png" class="chip">
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <h4>Carteirinha Digital</h4>
+                            <h5>ID: 968576479A</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small> Venc. </small>
+                                <h5>08/23</h5>
+                            </div>
+                            <div class="cvv">
+                                <small> Dig </small>
+                                <center>
+                                    <h5>10</h5>
+                                </center>
+                            </div>
+                            <div class="cvv">
+                                <small> UF </small>
+                                <h5>SP</h5>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--END OF CARD 1-->
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img src="../static/img/aapm.png">
+                            <h2>Sócio AAPM</h2>
+                        </div>
+                        <img src="https://inmotion.blog.br/wp-content/uploads/2021/06/SENAI-1.png" class="right">
+                    </div>
+                    <div class="middle">
+                        <h2>Taiana Tourinho Costa</h2>
+
+                        <img src="https://ohiobitcoin.com/BTC/images/qr-code/qr-code-200px.png" class="chip">
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <h4>Sócio AAPM</h4>
+                            <h5>ID: 968789A</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small> Venc. </small>
+                                <h5>06/23</h5>
+                            </div>
+                            <div class="cvv">
+                                <small> Dig </small>
+                                <center>
+                                    <h5>9</h5>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--END OF CARD 2-->
+                <div class="card">
+                    <div class="top">
+                        <div class="left">
+                            <img src="../static/img/aapm.png">
+                            <h2>Auxilio</h2>
+                        </div>
+                        <img src="https://inmotion.blog.br/wp-content/uploads/2021/06/SENAI-1.png" class="right">
+                    </div>
+                    <div class="middle">
+                        <h2>Taiana Tourinho Costa</h2>
+                        <img src="https://www.postbank.de/dam/postbank/bilder/services/privatkunden/karten-services/postbank-card/postbank-card-debitkarte-v-pay-emv-chip.png"
+                            class="chip">
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <h4>Benefício - Almoço</h4>
+                            <h5>ID: 968789A</h5>
+                        </div>
+                        <div class="right">
+                            <div class="expiry">
+                                <small> Venc. </small>
+                                <h5>06/23</h5>
+                            </div>
+                            <div class="cvv">
+                                <small> Dig </small>
+                                <center>
+                                    <h5>9</h5>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--END OF CARD 2-->
+
+            </div>
+            <!--END OF CARDS-->
+
+        </section>
+
+    </main>
+    <!--END OF ASIDE-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        // Show or ride hide sidebar
+        const menuBtn = document.querySelector('#menu-btn');
+        const closeBtn = document.querySelector('#close-btn');
+        const sidebar = document.querySelector('aside');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.display = 'block';
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.display = 'none';
+        })
+
+        // change theme
+        const themeBtn = document.querySelector('.theme-btn');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            themeBtn.querySelector('span:first-child').classList.toggle('active');
+
+            themeBtn.querySelector('span:last-child').classList.toggle('active');
+        })
+
+
+    </script>
+
+</body>
+
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem acesso</title>
+</head>
+
+<body>
+    <center>
+        <h1>Você não tem acesso a essa área.</h1>
+        <h2>Faça o cadastro em nossa plataforma e aproveite mais!</h2>
+        <button class="button" role="button"><span class="text"><a href="{% url 'home' %}">Vá para nossa
+                    plataforma</a></span></button>
+    </center>
+</body>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1,
+    h2 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+
+</html>
+{% endif %}
+
+{% endblock %}

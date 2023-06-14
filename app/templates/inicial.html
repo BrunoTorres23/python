@@ -1,0 +1,1729 @@
+{% block content %}
+    {% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!--Google Fonts poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LINK DO VÍDEO = https://www.youtube.com/watch?v=FaBY9yAUtdg -->
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1">
+            <a href="{% url 'inicial' %}"> <img style="width: 19%;" src="../static/img/logo fox.png" class="logo"></a>
+            <div class="search-bar">
+                <span class="material-icons-sharp primary"> search </span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active dark primary"> light_mode </span>
+                    <span class="material-icons-sharp primary">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <a href="{% url 'config' %}"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                        </a>
+                    </div>
+                    <h5> 968576479@Aluno</h5>
+                    <a href="{% url 'config' %}"> <span class="material-icons-sharp primary"> expand_more </span> </a>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp primary"> menu </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--END OF NAVBAR-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp"> close </span>
+            </button>
+
+            <div class="sidebar">
+                <a href="{% url 'inicial' %}" class="active">
+                    <span class="material-icons-sharp"> house </span>
+                    <h4>Home</h4>
+                </a>
+
+                <a href="{% url 'material' %}">
+                    <span class="material-icons-sharp"> article </span>
+                    <h4>Material</h4>
+                </a>
+
+                <a href="{% url 'rendimento' %}">
+                    <span class="material-icons-sharp"> show_chart </span>
+                    <h4>Rendimento</h4>
+                </a>
+
+                <a href="{% url 'aulas' %}">
+                    <span class="material-icons-sharp"> ondemand_video </span>
+                    <h4>Aulas Disponíveis</h4>
+                </a>
+
+                <a href="{% url 'config' %}">
+                    <span class="material-icons-sharp"> manage_accounts </span>
+                    <h4>Configurações</h4>
+                </a>
+
+                <a href="/logouts/">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h4>Sair / LogOut</h4>
+                </a>
+
+
+        </aside>
+        <!--------------------END OF ASIDE------------------->
+
+        <section class="middle">
+
+            <h1> Novidades da instituição </h1>
+
+            <section class="courses">
+                <div class="container courses_container">
+                    <article class="course">
+                        <div class="course_image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1610/1610671.png"
+                                style="width: 80%; padding: 15px;">
+                        </div>
+                        <div class="course_info">
+                            <h2>Feira de Talentos</h2>
+                            <h4>Olha essa oportunidade!</h4>
+                            <p> Sua instituição está disponibilizando uma feira de talentos, oferecendo mais de 8 mil
+                                vagas de emprego para todo o país</p>
+                        </div>
+                    </article>
+                    <article class="course">
+                        <div class="course_image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2034/2034131.png"
+                                style="width: 80%; padding: 10px;">
+                        </div>
+                        <div class="course_info">
+                            <h2>Exposições Culturais</h2>
+                            <h4> Fique Atento! </h4>
+                            <p>Sua instituição está disponibilizando um passeio para a maior feira de
+                                máquinas-ferramentas e automação industrial</p>
+                        </div>
+                    </article>
+                    <article class="course">
+                        <div class="course_image">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2490/2490291.png"
+                                style="width: 80%; padding: 10px;">
+                        </div>
+                        <div class="course_info">
+                            <h2>Teste Teórico</h2>
+                            <h4>Não perca!</h4>
+                            <p>Essa Semana será disponibilizando um teste teórico, para testar seus conhecimentos ao
+                                final deste semestre em sua instituição </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- --------------------------------------- end of courses ------------------------------------------------- -->
+
+            <section>
+                <div class="content">
+                    <h1>Datas importantes do semestre</h1>
+                    <br>
+                    <figure class="org-chart cf">
+                        <ul class="administration">
+                            <ul class="director">
+                                <a href="#">
+                                    <h2>SUA TURMA : M3DESI</h2>
+                                </a>
+                            </ul>
+                            <ul class="departments cf">
+                                <li>
+
+                                <li class="department dep-a">
+                                    <a href="#">
+                                        <h3>Provas</h3>
+                                    </a>
+                                    <ul class="sections">
+                                        <li class="section"><a href="#"><span>24/01 Conhec.</span></a></li>
+                                        <li class="section"><a href="#"><span>12/03 Format.</span></a></li>
+                                        <li class="section"><a href="#"><span>08/05 Conclus.</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="department dep-b">
+                                    <a href="#">
+                                        <h3>Atividades</h3>
+                                    </a>
+                                    <ul class="sections">
+                                        <li class="section"><a href="#"><span>26/01 HARD</span></a></li>
+                                        <li class="section"><a href="#"><span>28/01 PPDM</span></a></li>
+                                        <li class="section"><a href="#"><span>02/02 LMAR</span></a></li>
+                                        <li class="section"><a href="#"><span>18/03 BDD</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="department dep-c">
+                                    <a href="#">
+                                        <h3>Práticas</h3>
+                                    </a>
+                                    <ul class="sections">
+                                        <li class="section"><a href="#"><span>25/02 HWD</span></a></li>
+                                        <li class="section"><a href="#"><span>03/03 HWD</span></a></li>
+                                        <li class="section"><a href="#"><span>14/04 HWD</span></a></li>
+                                        <li class="section"><a href="#"><span>17/05 HWD</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="department dep-d">
+                                    <a href="#">
+                                        <h3>Material das Provas</h3>
+                                    </a>
+                                    <ul class="sections">
+                                        <li class="section"><a href="#"><span>25/01</span></a></li>
+                                        <li class="section"><a href="#"><span>28/02</span></a></li>
+                                        <li class="section"><a href="#"><span>30/03</span></a></li>
+                                        <li class="section"><a href="#"><span>10/04</span></a></li>
+                                        <li class="section"><a href="#"><span>19/05</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="department dep-e">
+                                    <a href="#">
+                                        <h3>Feriados</h3>
+                                    </a>
+                                    <ul class="sections">
+                                        <li class="section"><a href="#"><span>17/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>18/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>19/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>20/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>21/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>22/02 </span></a></li>
+                                        <li class="section"><a href="#"><span>07/04 </span></a></li>
+                                        <li class="section"><a href="#"><span>09/04 </span></a></li>
+                                        <li class="section"><a href="#"><span>01/05 </span></a></li>
+                                        <li class="section"><a href="#"><span>14/05 </span></a></li>
+                                        <li class="section"><a href="#"><span>07/06 </span></a></li>
+                                        <li class="section"><a href="#"><span>08/06 </span></a></li>
+                                        <li class="section"><a href="#"><span>12/06 </span></a></li>
+                                        <li class="section"><a href="#"><span>25/07 </span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        </ul>
+                    </figure>
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =========================================END OF MIDDLE=============================================-->
+
+        <section class="right">
+
+            <h1> Controle de atividades </h1>
+            <br>
+
+            <div class="wrapper">
+                <div class="Rtable Rtable--5cols Rtable--collapse">
+                    <div class="Rtable-row Rtable-row--head">
+                        <div class="Rtable-cell date-cell column-heading">Entrega</div>
+                        <div class="Rtable-cell topic-cell column-heading">Materia</div>
+                        <div class="Rtable-cell access-link-cell column-heading">Situação</div>
+                        <div class="Rtable-cell access-link-cell column-heading">Acesso</div>
+                        <div class="Rtable-cell pdf-cell column-heading">Nota </div>
+                    </div>
+
+
+                    <div class="Rtable-row is-hidden">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">data</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">12/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">Python</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">Entregue</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Concluido</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">add</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-striped">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">12/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">PPDM</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">Entregue</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Concluido</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">add</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-hidden">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">18/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">LMAR</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">Entregue</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">add</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-striped">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">19/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">Hardware</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">Entregue</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">add</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-hidden">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">21/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">Projetos</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">A realizar</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">priority_high</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-striped">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">22/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">Java</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">A realizar</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">priority_high</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-hidden">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">21/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">Projetos</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">A realizar</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">priority_high</span></a></div>
+                        </div>
+                    </div>
+
+                    <div class="Rtable-row is-striped">
+                        <div class="Rtable-cell date-cell">
+                            <div class="Rtable-cell--heading">Date</div>
+                            <div class="Rtable-cell--content date-content"><span class="webinar-date">22/05/23</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Materia</div>
+                            <div class="Rtable-cell--content pdf-content">BDD</div>
+                        </div>
+                        <div class="Rtable-cell topic-cell">
+                            <div class="Rtable-cell--heading">Situação</div>
+                            <div class="Rtable-cell--content pdf-content">A realizar</div>
+                        </div>
+                        <div class="Rtable-cell access-link-cell">
+                            <div class="Rtable-cell--heading">Acesso a atividade</div>
+                            <div class="Rtable-cell--content access-link-content"><a href="#0"><span
+                                        class="material-icons-sharp">attach_file</span></a></div>
+                        </div>
+                        <div class="Rtable-cell Rtable-cell--foot pdf-cell">
+                            <div class="Rtable-cell--heading">Checklist</div>
+                            <div class="Rtable-cell--content pdf-content"><a href="#0"><span
+                                        class="material-icons-sharp">priority_high</span></a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <h1>Seu rendimento atual no curso M3DESI é de:</h1>
+            <!-- Horizontal, rounded -->
+
+            <div class="container horizontal rounded">
+                <h3 style="color: var(--color-dark);">Atividades e provas</h3>
+                <div class="progress-bar horizontal">
+                    <div class="progress-track">
+                        <div class="progress-fill-1">
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--color-dark);">Práticas</h3>
+                <div class="progress-bar horizontal">
+                    <div class="progress-track">
+                        <div class="progress-fill-2">
+                            <span>75%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--color-dark);"> Presença </h3>
+                <div class="progress-bar horizontal">
+                    <div class="progress-track">
+                        <div class="progress-fill-3">
+                            <span>60%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--color-dark);"> Teóricas</h3>
+                <div class="progress-bar horizontal">
+                    <div class="progress-track">
+                        <div class="progress-fill-4">
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+    </main>
+    <!--END OF ASIDE-->
+
+    <script>
+
+        // Show or ride hide sidebar
+        const menuBtn = document.querySelector('#menu-btn');
+        const closeBtn = document.querySelector('#close-btn');
+        const sidebar = document.querySelector('aside');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.display = 'block';
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.display = 'none';
+        })
+
+        // change theme
+        const themeBtn = document.querySelector('.theme-btn');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            themeBtn.querySelector('span:first-child').classList.toggle('active');
+
+            themeBtn.querySelector('span:last-child').classList.toggle('active');
+        })
+
+        //notification
+        function closeMessage(el) {
+            el.addClass('is-hidden');
+        }
+
+        $('.js-messageClose').on('click', function (e) {
+            closeMessage($(this).closest('.Message'));
+        });
+
+        $('#js-helpMe').on('click', function (e) {
+            alert('Help you we will, young padawan');
+            closeMessage($(this).closest('.Message'));
+        });
+
+        $('#js-authMe').on('click', function (e) {
+            alert('Okelidokeli, requesting data transfer.');
+            closeMessage($(this).closest('.Message'));
+        });
+
+        $('#js-showMe').on('click', function (e) {
+            alert("You're off to our help section. See you later!");
+            closeMessage($(this).closest('.Message'));
+        });
+
+        $(document).ready(function () {
+            setTimeout(function () {
+                closeMessage($('#js-timer'));
+            }, 5000);
+        });
+
+        //horizontal rounded bar
+        $('.horizontal .progress-fill span').each(function () {
+            var percent = $(this).html();
+            $(this).parent().css('width', percent);
+        });
+
+    </script>
+
+    <style>
+        /*ROOT CSS VARIABLES*/
+        :root {
+            --color-white: #ffffff;
+            --color-light: #f0eff5;
+            --color-gray-light: #86848c;
+            --color-gray-dark: #56555e;
+            --color-dark: #27282f;
+            --color-primary: rgb(230, 110, 19);
+            --color-success: rgb(34, 202, 75);
+            --color-danger: rgb(255, 67, 54);
+            --color-warning: rgb(234, 181, 7);
+            --color-purple: rgb(160, 99, 245);
+            --bg-blue: #225D72;
+            --bg-blu1: #416F7C;
+            --bg-blu2: #608186;
+            --bg-blu3: #809390;
+            --bg-blu4: #9FA599;
+            --bg-blu5: #BEB7A3;
+            --bg-blu6: #DDC9AD;
+            --bg-folha: #CD946D;
+
+            --color-primary-light: rgb(230, 110, 19, 0.2);
+            --color-success-light: rgb(34, 202, 75, 0.2);
+            --color-danger-light: rgb(255, 67, 54, 0.2);
+            --color-warning-light: rgb(234, 181, 7, 0.2);
+            --color-purple-light: rgb(160, 99, 245, 0.2);
+
+            --card-padding: 1.6rem;
+            --padding-1: 1rem;
+            --padding-2: 8px;
+
+            --card-border-radius: 1.6rem;
+            --border-radius-1: 1rem;
+            --border-radius-2: 6px;
+        }
+
+        /*DARK THEME*/
+        .dark-theme {
+            --color-white: #131316;
+            --color-light: #23232a;
+            --color-dark: #ddd;
+            --color-gray-dark: #adacb5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            appearance: none;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        body {
+            background: var(--color-light);
+            font-family: poppins, sans-serif;
+            min-height: 100vh;
+            color: var(color --color-dark);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--color-dark);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--color-dark);
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: var(--color-dark);
+        }
+
+        h5 {
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        h6 {
+            font-size: 0.76rem;
+            color: var(--color-dark);
+        }
+
+        p {
+            font-size: 0.86rem;
+            color: var(--color-gray-dark);
+        }
+
+        small {
+            font-weight: 300;
+            font-size: 0.77rem;
+            color: var(--color-dark);
+        }
+
+        .text-muted {
+            color: var(--color-gray-light);
+        }
+
+        .primary {
+            color: var(--color-primary);
+        }
+
+        .danger {
+            color: var(--color-danger);
+        }
+
+        .success {
+            color: var(--color-success);
+        }
+
+        .purple {
+            color: var(--color-purple);
+        }
+
+        .bg-blue {
+            background: #225D72;
+        }
+
+        .bg-blu1 {
+            background: #416F7C;
+        }
+
+        .bg-blu2 {
+            background: #608186;
+        }
+
+        .bg-blu3 {
+            background: #809390;
+        }
+
+        .bg-blu4 {
+            background: #9FA599;
+        }
+
+        .bg-blu5 {
+            background: #BEB7A3;
+        }
+
+        .bg-blu6 {
+            background: #DDC9AD;
+        }
+
+        .bg-folha {
+            background: #CD946D;
+        }
+
+        .bg-primary {
+            background: var(--color-primary);
+            box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+        }
+
+        .bg-danger {
+            background: var(--color-danger);
+            box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+        }
+
+        .bg-success {
+            background: var(--color-success);
+            box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+        }
+
+        .bg-purple {
+            background: var(--color-purple);
+            box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+        }
+
+        .bg-dark {
+            background: #27282f;
+            box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2rem);
+        }
+
+        .white {
+            color: #ffffff;
+            font-family: poppins, sans-serif;
+            box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2rem);
+        }
+
+        /*NAV BAR*/
+        nav {
+            width: 100%;
+            background: var(--color-white);
+            padding: 1rem 0;
+        }
+
+        nav .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        nav img.logo {
+            width: 7rem;
+        }
+
+        nav .search-bar {
+            background: var(--color-light);
+            padding: var(--padding-2) var(--card-padding);
+            width: 32vw;
+            border-radius: var(--border-radius-2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--color-gray-light);
+            position: absolute;
+            left: 15%;
+        }
+
+        nav .search-bar input[type="search"] {
+            color: var(--color-dark);
+            background: transparent;
+            width: 100%;
+        }
+
+        nav .search-bar input[type="search"]::placeholder {
+            color: var(--color-gray-dark);
+        }
+
+        nav .profile-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        nav .profile-area .theme-btn {
+            display: flex;
+            background: var(--color-light);
+            width: 5rem;
+            height: 2rem;
+            border-radius: var(--border-radius-2);
+            cursor: pointer;
+        }
+
+        nav .profile-area .theme-btn span {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        nav .profile-area .theme-btn .active {
+            background: var(--color-dark);
+            border-radius: var(--border-radius-2);
+            color: var(--color-white);
+        }
+
+        nav .profile-area .profile {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        nav .profile-area .profile-photo {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        nav .profile-area button {
+            display: none;
+        }
+
+        /*ASIDE & SIDEBAR*/
+        main {
+            display: grid;
+            grid-template-columns: 16rem auto 30rem;
+            gap: 2rem;
+            width: 96%;
+            margin: 1rem auto 4rem;
+        }
+
+        main aside {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 88vh;
+        }
+
+        /*Will be shown only on mobile and tablets*/
+        main aside button#close-btn {
+            display: none;
+        }
+
+        main aside .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            height: 4.2rem;
+            color: var(--color-gray-light);
+            position: relative;
+        }
+
+        main aside .sidebar a span {
+            font-size: 1.7rem;
+            margin-left: 3rem;
+            transition: all 300ms ease;
+        }
+
+        main aside .sidebar a.active {
+            background: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a.active:before {
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            background: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover {
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover span {
+            margin-left: 2rem;
+        }
+
+        main aside .sidebar h4 {
+            font-weight: 600;
+        }
+
+        main aside .updates a:hover {
+            box-shadow: 0 1rem 2rem var(--color-primary-light);
+        }
+
+        /*----------------------------------------------------------MIDDLE----------------------------------*/
+
+        /*BTTN*/
+        .btn {
+            display: inline-block;
+            background: var(--bg-blu1);
+            color: var(--color-light);
+            padding: 1rem 2rem;
+            border: 1px solid transparent;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: #E29351;
+            color: var(--color-white);
+            border-color: var(--color-gray-dark);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+
+        /*News*/
+
+        .courses_container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .course {
+            background: #7c7c7c31;
+            text-align: center;
+            border: 3px solid rgba(188, 188, 188, 0.652);
+            transition: var(--transition);
+        }
+
+        .course:hover {
+            background: #e0ab7a8f;
+            border-color: var(--color-primary);
+        }
+
+        .course_info {
+            padding: 2rem;
+        }
+
+        .course_info p {
+            margin: 1rem 0 2rem;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            padding: 20px 0 20px 0;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        /* ------------------------------------------------------------------------------- Datas importantes -------------------------------------------------------------------*/
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .cf:before,
+        .cf:after {
+            content: " ";
+            /* 1 */
+            display: table;
+            /* 2 */
+        }
+
+        .cf:after {
+            clear: both;
+        }
+
+        /**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+        .cf {
+            zoom: 1;
+        }
+
+        /* Generic styling */
+
+        .content {
+            width: 100%;
+            max-width: 1142px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a:focus {
+            outline: 2px dashed #f7f7f7;
+        }
+
+        @media screen and (max-width: 767px) {
+            .content {
+                padding: 0 20px;
+            }
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul a {
+            display: block;
+            background: var(--color-primary);
+            border: 3px solid rgba(188, 188, 188, 0.652);
+            text-align: center;
+            overflow: hidden;
+            font-size: .7em;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff;
+            height: 70px;
+            margin-bottom: -26px;
+            box-shadow: 4px 4px 9px -4px rgba(0, 0, 0, 0.4);
+            -webkit-transition: all linear .1s;
+            -moz-transition: all linear .1s;
+            transition: all linear .1s;
+        }
+
+        @media print {
+            ul a {
+                border: 4px solid #000;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            ul a {
+                font-size: 1em;
+            }
+        }
+
+
+        ul a span {
+            top: 50%;
+            margin-top: -0.7em;
+            display: block;
+            font-size: 10px;
+            color: black;
+        }
+
+        ul a h3 {
+            top: 50%;
+            margin-top: -0.7em;
+            display: block;
+            font-size: 12px;
+            color: black;
+        }
+
+        ul a h2 {
+            top: 50%;
+            margin-top: -0.7em;
+            display: block;
+            font-size: 20px;
+            color: black;
+        }
+
+        .subdirector>li:first-child,
+        .departments>li:first-child {
+            margin: 0 auto 20px auto;
+            padding-top: 25px;
+        }
+
+        @media print {
+
+            .subdirector>li:first-child,
+            .departments>li:first-child {
+                border-bottom: 4px solid #000;
+            }
+        }
+
+        .subdirector>li:first-child {
+            float: right;
+            right: 27.2%;
+            border-left: 4px solid rgb(255, 0, 0);
+        }
+
+        @media print {
+            .subdirector>li:first-child {
+                border-left: 4px solid black;
+            }
+        }
+
+        .departments>li:first-child {
+            float: left;
+            border-right: 3px solid rgba(188, 188, 188, 0.652);
+        }
+
+        @media print {
+            .departments>li:first-child {
+                border-right: 4px solid black;
+            }
+        }
+
+        .subdirector>li:first-child a,
+        .departments>li:first-child a {
+            width: 100%;
+        }
+
+        .subdirector>li:first-child a {
+            left: 25px;
+        }
+
+        .departments>li:first-child a {
+            right: 25px;
+        }
+
+        .department:first-child,
+        .departments li:nth-child(2) {
+            margin-left: 0;
+            clear: left;
+        }
+
+        .departments:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 81.1%;
+            height: 22px;
+            margin: 0 auto;
+            top: 130px;
+            left: 9.1%
+        }
+
+        @media print {
+            .departments:after {
+                border-top: 4px solid #000;
+                border-right: 4px solid #000;
+                border-left: 4px solid #000;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .departments:after {
+                border-right: none;
+                left: 0;
+                width: 49.8%;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .department:first-child:before,
+            .department:last-child:before {
+                border: none;
+            }
+        }
+
+        .department:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 22px;
+            border-left: 3px solid rgba(188, 188, 188, 0.652);
+            z-index: 1;
+            top: -22px;
+            left: 50%;
+            margin-left: -4px;
+        }
+
+        @media print {
+            .department:before {
+                border-left: 4px solid black;
+            }
+        }
+
+        .department {
+            border-left: 3px solid rgba(188, 188, 188, 0.652);
+            width: 18.59894921190893%;
+            float: left;
+            margin-left: 1.751313485113835%;
+            margin-bottom: 60px;
+        }
+
+        @media print {
+            .department {
+                border-left: 4px solid #000;
+            }
+        }
+
+        .lt-ie8 .department {
+            width: 18.25%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .department {
+                float: none;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .department:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 60px;
+                border-left: 3px solid rgba(188, 188, 188, 0.652);
+                z-index: 1;
+                top: -60px;
+                left: 0%;
+                margin-left: -4px;
+            }
+
+            .department:nth-child(2):before {
+                display: none;
+            }
+        }
+
+        .department>a {
+            margin: 0 0 -26px -4px;
+            z-index: 1;
+        }
+
+        .department>a:hover {
+            height: 80px;
+        }
+
+        .department>ul {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .department li {
+            padding-left: 25px;
+            border-bottom: 2px solid rgba(188, 188, 188, 0.652);
+            height: 80px;
+        }
+
+        @media print {
+            .department li {
+                border-bottom: 4px solid #000;
+            }
+        }
+
+        .department li a {
+            background: #fff;
+            top: 48px;
+            position: absolute;
+            z-index: 1;
+            width: 90%;
+            height: 60px;
+            vertical-align: middle;
+            right: -1px;
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+            background-image: -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(100%, rgba(0, 0, 0, 0))) !important;
+            background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            background-image: -o-linear-gradient(-45deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            background-image: -ms-linear-gradient(-45deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40000000', endColorstr='#00000000', GradientType=1);
+        }
+
+        .department li a:hover {
+            box-shadow: 8px 8px 9px -4px rgba(0, 0, 0, 0.1);
+            height: 80px;
+            width: 95%;
+            top: 39px;
+            background-image: none !important;
+        }
+
+        /* Department/ section colors */
+        .department.dep-a a {
+            background: #E57A28;
+        }
+
+        .department.dep-b a {
+            background: #E4863C;
+        }
+
+        .department.dep-c a {
+            background: #E29351;
+        }
+
+        .department.dep-d a {
+            background: #E19F65;
+        }
+
+        .department.dep-e a {
+            background: #E0AB7A;
+        }
+
+        /*------------------------------------------------ Table controle atividades ---------------------------------------------*/
+
+        .wrapper {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .is-striped {
+            background-color: #e19f65e5;
+        }
+
+        .is-hidden {
+            background-color: #e29251ee;
+        }
+
+        /* Table column sizing
+================================== */
+        .date-cell {
+            width: 20%;
+        }
+
+        .topic-cell {
+            width: 25%;
+        }
+
+        .access-link-cell {
+            width: 20%;
+        }
+
+        .pdf-cell {
+            width: 20%;
+        }
+
+        /* Apply styles
+================================== */
+        .Rtable {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 0 3em 0;
+            padding: 0;
+            box-shadow: 0 0 3px var(--color-dark);
+        }
+
+        .Rtable .Rtable-row {
+            width: 100%;
+            display: flex;
+        }
+
+        .Rtable .Rtable-row .Rtable-cell {
+            box-sizing: border-box;
+            flex-grow: 1;
+            padding: 0.8em 0.8em;
+            overflow: hidden;
+            list-style: none;
+        }
+
+        .Rtable .Rtable-row .Rtable-cell.column-heading {
+            background-color: var(--color-primary);
+            color: rgb(255, 255, 255);
+            padding: 1em;
+        }
+
+        .Rtable .Rtable-row .Rtable-cell .Rtable-cell--heading {
+            display: none;
+        }
+
+        .Rtable .Rtable-row .Rtable-cell .Rtable-cell--content a {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .Rtable .Rtable-row .Rtable-cell .Rtable-cell--content .webinar-date {
+            font-weight: 700;
+        }
+
+        /* Responsive
+==================================== */
+        @media all and (max-width: 750px) {
+            .is-striped {
+                background-color: #E19F65;
+            }
+
+            .is-hidden {
+                background-color: #E29351;
+            }
+
+            .Rtable--collapse {
+                display: block;
+                width: 100%;
+                padding: 1em;
+                box-shadow: none;
+            }
+
+            .Rtable--collapse .Rtable-row {
+                box-sizing: border-box;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 2em;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            }
+
+            .Rtable--collapse .Rtable-row .Rtable-cell {
+                width: 100% !important;
+                display: flex;
+                align-items: center;
+            }
+
+            .Rtable--collapse .Rtable-row .Rtable-cell .Rtable-cell--heading {
+                display: inline-block;
+                flex: 1;
+                max-width: 120px;
+                min-width: 120px;
+                color: #000000;
+                font-weight: 700;
+                border-right: 1px solid var(--color-gray-dark);
+                margin-right: 1em;
+            }
+
+            .Rtable--collapse .Rtable-row .Rtable-cell .Rtable-cell--content {
+                flex: 2;
+                padding-left: 1em;
+            }
+
+            .Rtable--collapse .topic-cell {
+                background-color: var(--color-primary);
+                color: rgb(0, 0, 0);
+                font-weight: 700;
+                order: -1;
+            }
+
+            .Rtable--collapse .topic-cell .Rtable-cell--content {
+                padding-left: 0 !important;
+            }
+
+            .Rtable--collapse .Rtable-row--head {
+                display: none;
+            }
+        }
+
+        .no-flexbox .Rtable {
+            display: block;
+        }
+
+        .no-flexbox .Rtable.Rtable-cell {
+            width: 100%;
+        }
+
+
+        /* ------------------------------------------------------------------------------- Rendimento atual -------------------------------------------------------------------*/
+
+        .horizontal .progress-bar {
+            float: left;
+            height: 45px;
+            width: 100%;
+            padding: 12px 0;
+        }
+
+        .horizontal .progress-track {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background: #ebebeb;
+        }
+
+        .horizontal .progress-fill-1 {
+            position: relative;
+            background: #E57D2D;
+            height: 20px;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            line-height: 20px;
+            border-radius: 3px;
+        }
+
+        .horizontal .progress-fill-2 {
+            position: relative;
+            background: #E38C46;
+            height: 20px;
+            width: 75%;
+            color: #fff;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .horizontal .progress-fill-3 {
+            position: relative;
+            background: #E29C60;
+            height: 20px;
+            width: 63%;
+            color: #fff;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .horizontal .progress-fill-4 {
+            position: relative;
+            background: #E0AB7A;
+            height: 20px;
+            width: 53%;
+            color: #fff;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .rounded .progress-track,
+        .rounded .progress-fill {
+            border-radius: 3px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+        }
+
+
+
+        /* --------------------------------------- MEDIA QUERIES FOR TABLETS ----------------------------------------------*/
+        @media screen and (max-width: 1024px) {
+            nav .search-bar {
+                display: none;
+            }
+
+            nav .profile-area {
+                gap: 2rem;
+            }
+
+            nav .profile-area button#menu-btn {
+                display: inline;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            main aside {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                z-index: 3;
+                background: var(--color-white);
+                width: 22rem;
+                height: 100vh;
+                box-shadow: 2rem 0 2rem var(--color-primary-light);
+                display: none;
+                animation: showSidebar 500ms ease forwards;
+            }
+
+            @keyframes showSidebar {
+                to {
+                    left: 0;
+                }
+
+            }
+
+            main aside button#close-btn {
+                display: inline-block;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                z-index: 4;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            main aside .sidebar {
+                margin-top: 4rem;
+            }
+
+            main aside .updates {
+                display: none;
+            }
+
+            main section.middle .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            main canvas {
+                margin: 3rem 0 1rem;
+            }
+
+            main section.right .recent-transactions {
+                margin-top: 3rem;
+            }
+        }
+
+        /* --------------------------------------- MEDIA QUERIES FOR MOBILE PHONES ----------------------------------------------*/
+        @media screen and(max-width:600px) {
+            nav .profile-area {
+                gap: 2.6rem;
+            }
+
+            nav .profile h5,
+            nav .profile span {
+                display: none;
+            }
+
+            main section.middle.cards {
+                grid-template-columns: 1fr;
+            }
+
+            main section.middle .fast-payment {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 3rem;
+                gap: 1.4rem;
+            }
+
+        }
+    </style>
+
+</body>
+
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem acesso</title>
+</head>
+
+<body>
+    <center>
+        <h1>Você não tem acesso a essa área.</h1>
+        <h2>Faça o cadastro em nossa plataforma e aproveite mais!</h2>
+        <button class="button" role="button"><span class="text"><a href="{% url 'home' %}">Vá para nossa
+                    plataforma</a></span></button>
+    </center>
+</body>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1,
+    h2 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+
+</html>
+{% endif %}
+
+{% endblock %}

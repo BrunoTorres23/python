@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<center>
+    <div class="home">
+        <br>
+        <h1>Seja Bem-vindo!</h1>
+        <br>
+        <button class="button" role="button"><span class="text"><a href="/painel/">Acesse a sua conta</a></button></span></button>
+        <br>
+        <button class="button" role="button"><span class="text"><a href="/create/">Faça o seu
+                    Cadastro</a></button></span></button>
+        <br>
+    </div>
+</center>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+        
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+        
+    }
+
+    .button:hover span {
+        background: none;
+       
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+       
+    }
+
+
+    .home {
+        background-color: #cd936d4c;
+        width: 30%;
+        border-radius: 20px;
+        margin: 13%;
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

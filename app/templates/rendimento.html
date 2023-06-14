@@ -1,0 +1,1011 @@
+{% block content %}
+{% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimento</title>
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!--Google Fonts poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LINK DO VÍDEO = https://www.youtube.com/watch?v=FaBY9yAUtdg -->
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1">
+            <a href="{% url 'inicial' %}"><img style="width: 19%;" src="../static/img/logo fox.png" class="logo"> </a>
+            <div class="search-bar">
+                <span class="material-icons-sharp primary"> search </span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active dark primary"> light_mode </span>
+                    <span class="material-icons-sharp primary">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <a href="{% url 'config' %}"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                        </a>
+                    </div>
+                    <h5> 968576479@Aluno</h5>
+                    <a href="{% url 'config' %}"> <span class="material-icons-sharp primary"> expand_more </span> </a>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp primary"> menu </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--END OF NAVBAR-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp"> close </span>
+            </button>
+
+            <div class="sidebar">
+                <a href="{% url 'inicial' %}">
+                    <span class="material-icons-sharp"> house </span>
+                    <h4>Home</h4>
+                </a>
+
+                <a href="{% url 'material' %}">
+                    <span class="material-icons-sharp"> article </span>
+                    <h4>Material</h4>
+                </a>
+
+                <a href="{% url 'rendimento' %}" class="active">
+                    <span class="material-icons-sharp"> show_chart </span>
+                    <h4>Rendimento</h4>
+                </a>
+
+                <a href="{% url 'aulas' %}">
+                    <span class="material-icons-sharp"> ondemand_video </span>
+                    <h4>Aulas Disponíveis</h4>
+                </a>
+
+                <a href="{% url 'config' %}">
+                    <span class="material-icons-sharp"> manage_accounts </span>
+                    <h4>Configurações</h4>
+                </a>
+
+                <a href="/logouts/">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h4>Sair / LogOut</h4>
+                </a>
+
+
+            </div>
+
+        </aside>
+        <!--------------------END OF ASIDE------------------->
+
+        <section class="middle">
+            <br>
+            <div class="header">
+                <h1>Seu Rendimento Semestral </h1>
+            </div>
+
+            <div class="monthly-report">
+                <div class="report">
+                    <h3 style="color: #E66E13;">HDW</h3>
+                    <div>
+                        <details>
+                            <h1>90%</h1>
+                            <h6 class="success"> melhora de 1.5% média</h6>
+                        </details>
+                        <p class="text-muted">Comparado ao semestre passado</p>
+                    </div>
+                </div>
+                <!--END OF INCOME REPORT-->
+                <div class="report">
+                    <h3 style="color: #C65F10;">ATOI</h3>
+                    <div>
+                        <details>
+                            <h1>85%</h1>
+                            <h6 class="danger"> piora de 2,5% média </h6>
+                        </details>
+                        <p class="text-muted">Comparado ao semestre passado</p>
+                    </div>
+                </div>
+                <!--END OF EXPENSES REPORT-->
+                <div class="report">
+                    <h3 style="color: #A54F0D;">ELE</h3>
+                    <div>
+                        <details>
+                            <h1>85%</h1>
+                            <h6 class="success"> melhora de 0,5% média </h6>
+                        </details>
+                        <p class="text-muted">Comparado ao semestre passado</p>
+                    </div>
+                </div>
+                <!--END OF CASHBACK REPORT-->
+                <div class="report">
+                    <h3 style="color: #843F0B;">MEC</h3>
+                    <div>
+                        <details>
+                            <h1>94%</h1>
+                            <h6 class="danger"> piora de 1,5% média </h6>
+                        </details>
+                        <p class="text-muted">Comparado ao semestre passado</p>
+                    </div>
+                </div>
+
+                <!--END OF TURNOVER REPORT-->
+
+            </div>
+            <!--END OF MONTHLY REPORT-->
+            <canvas id="chart"></canvas>
+
+        </section>
+        <!-- =========================================END OF MIDDLE=============================================-->
+
+        <section class="right">
+            <div class="investments">
+                <div class="header">
+                    <h1>Alerta Pessoal</h1>
+                </div>
+                <div class="investment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4201/4201973.png" alt="">
+                    <h4>Faltas</h4>
+                    <div class="bonds">
+                        <p> Situação: </p>
+                        <small class="text-muted danger">100/110 faltas</small>
+                    </div>
+                    <div class="bonds">
+                        <p> Frequência: </p>
+                        <small class="text-muted danger">75% / 100%</small>
+                    </div>
+                </div>
+
+                <div class="investment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4201/4201973.png" alt="">
+                    <h4>Prova </h4>
+                    <div class="bonds">
+                        <p> Situação: </p>
+                        <small class="text-muted danger">Não realizada</small>
+                    </div>
+                    <div class="bonds">
+                        <p> Frequência: </p>
+                        <small class="text-muted danger"> - 25 pontos</small>
+                    </div>
+                </div>
+
+                <div class="investment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7047/7047208.png" alt="">
+                    <h4>Formativa 3</h4>
+                    <div class="bonds">
+                        <p> Situação: </p>
+                        <small class="text-muted success">Dísponível</small>
+                    </div>
+                    <div class="bonds">
+                        <p>Data final: </p>
+                        <small class="text-muted success"> 05/04/2023 </small>
+                    </div>
+                </div>
+
+                <div class="investment">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7047/7047208.png" alt="">
+                    <h4>Curso Transversal</h4>
+                    <div class="bonds">
+                        <p> Situação: </p>
+                        <small class="text-muted success">Dísponível</small>
+                    </div>
+                    <div class="bonds">
+                        <p>Data final: </p>
+                        <small class="text-muted success"> 08/05/2023 </small>
+                    </div>
+                </div>
+            </div>
+            <!--END OF INVESTMENTS-->
+
+            <div class="recent-transactions">
+                <div class="header">
+                    <h2>Semestres</h2>
+                </div>
+                <div class="transaction">
+                    <div class="service">
+                        <div class="icon bg-dark">
+                            <span class="material-icons-sharp primary"> looks_one </span>
+                        </div>
+                        <div class="details">
+                            <h4>Primeiro Semestre </h4>
+                            <p>20/01/22 até 24/05/22</p>
+                        </div>
+                        <div class="details">
+                            <h4>Situação</h4>
+                            <p class="success">Aprovado</p>
+                        </div>
+                        <div class="details">
+                            <h4>Média</h4>
+                            <p>94%</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END OF TRANSACTION-->
+                <div class="transaction">
+                    <div class="service">
+                        <div class="icon bg-dark">
+                            <span class="material-icons-sharp primary"> looks_one </span>
+                        </div>
+                        <div class="details">
+                            <h4>Primeiro Semestre </h4>
+                            <p>25/06/22 até 18/12/22</p>
+                        </div>
+                        <div class="details">
+                            <h4>Situação</h4>
+                            <p class="success">Aprovado</p>
+                        </div>
+                        <div class="details">
+                            <h4>Média</h4>
+                            <p>98%</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END OF TRANSACTIONS-->
+        </section>
+
+    </main>
+    <!--END OF ASIDE-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const chart = document.querySelector("#chart").getContext('2d');
+
+        // create a new chart instance
+        new Chart(chart, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+
+                datasets: [
+                    {
+                        label: 'HDR',
+                        data: [100, 90, 65, 80, 90, 90],
+                        borderColor: '#E66E13',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'AUTOI',
+                        data: [70, 85, 90, 70, 100, 85],
+                        borderColor: '#C65F10',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'ELE',
+                        data: [85, 70, 80, 90, 85, 85],
+                        borderColor: '#A54F0D',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'MEC',
+                        data: [80, 95, 95, 90, 95, 94],
+                        borderColor: '#843F0B',
+                        borderWidth: 2
+                    },
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        })
+
+        // Show or ride hide sidebar
+        const menuBtn = document.querySelector('#menu-btn');
+        const closeBtn = document.querySelector('#close-btn');
+        const sidebar = document.querySelector('aside');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.display = 'block';
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.display = 'none';
+        })
+
+        // change theme
+        const themeBtn = document.querySelector('.theme-btn');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            themeBtn.querySelector('span:first-child').classList.toggle('active');
+
+            themeBtn.querySelector('span:last-child').classList.toggle('active');
+        })
+
+
+    </script>
+
+    <style>
+        /*ROOT CSS VARIABLES*/
+        :root {
+            --color-white: #ffffff;
+            --color-light: #f0eff5;
+            --color-gray-light: #86848c;
+            --color-gray-dark: #56555e;
+            --color-dark: #27282f;
+            --color-primary: rgb(230, 110, 19);
+            --color-success: rgb(34, 202, 75);
+            --color-danger: rgb(255, 67, 54);
+            --color-warning: rgb(234, 181, 7);
+            --color-purple: rgb(160, 99, 245);
+
+            --color-primary-light: rgb(230, 110, 19, 0.2);
+            --color-success-light: rgb(34, 202, 75, 0.2);
+            --color-danger-light: rgb(255, 67, 54, 0.2);
+            --color-warning-light: rgb(234, 181, 7, 0.2);
+            --color-purple-light: rgb(160, 99, 245, 0.2);
+
+            --card-padding: 1.6rem;
+            --padding-1: 1rem;
+            --padding-2: 8px;
+
+            --card-border-radius: 1.6rem;
+            --border-radius-1: 1rem;
+            --border-radius-2: 6px;
+        }
+
+        /*DARK THEME*/
+        .dark-theme {
+            --color-white: #131316;
+            --color-light: #23232a;
+            --color-dark: #ddd;
+            --color-gray-dark: #adacb5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            appearance: none;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        body {
+            background: var(--color-light);
+            font-family: poppins, sans-serif;
+            min-height: 100vh;
+            color: var(color --color-dark);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--color-dark);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--color-dark);
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: var(--color-dark);
+        }
+
+        h5 {
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        h6 {
+            font-size: 0.76rem;
+            color: var(--color-dark);
+        }
+
+        p {
+            font-size: 0.86rem;
+            color: var(--color-gray-dark);
+        }
+
+        small {
+            font-weight: 300;
+            font-size: 0.77rem;
+            color: var(--color-dark);
+        }
+
+        .text-muted {
+            color: var(--color-gray-light);
+        }
+
+        .primary {
+            color: var(--color-primary);
+        }
+
+        .danger {
+            color: var(--color-danger);
+        }
+
+        .success {
+            color: var(--color-success);
+        }
+
+        .purple {
+            color: var(--color-purple);
+        }
+
+        .bg-primary {
+            background: var(--color-primary);
+            box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+        }
+
+        .bg-danger {
+            background: var(--color-danger);
+            box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+        }
+
+        .bg-success {
+            background: var(--color-success);
+            box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+        }
+
+        .bg-purple {
+            background: var(--color-purple);
+            box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+        }
+
+        .bg-dark {
+            background: #27282f;
+            box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2rem);
+        }
+
+        /*NAV BAR*/
+        nav {
+            width: 100%;
+            background: var(--color-white);
+            padding: 1rem 0;
+        }
+
+        nav .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        nav img.logo {
+            width: 7rem;
+        }
+
+        nav .search-bar {
+            background: var(--color-light);
+            padding: var(--padding-2) var(--card-padding);
+            width: 32vw;
+            border-radius: var(--border-radius-2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--color-gray-light);
+            position: absolute;
+            left: 15%;
+        }
+
+        nav .search-bar input[type="search"] {
+            color: var(--color-dark);
+            background: transparent;
+            width: 100%;
+        }
+
+        nav .search-bar input[type="search"]::placeholder {
+            color: var(--color-gray-dark);
+        }
+
+        nav .profile-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        nav .profile-area .theme-btn {
+            display: flex;
+            background: var(--color-light);
+            width: 5rem;
+            height: 2rem;
+            border-radius: var(--border-radius-2);
+            cursor: pointer;
+        }
+
+        nav .profile-area .theme-btn span {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        nav .profile-area .theme-btn .active {
+            background: var(--color-dark);
+            border-radius: var(--border-radius-2);
+            color: var(--color-white);
+        }
+
+        nav .profile-area .profile {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        nav .profile-area .profile-photo {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        nav .profile-area button {
+            display: none;
+        }
+
+        /*ASIDE & SIDEBAR*/
+        main {
+            display: grid;
+            grid-template-columns: 16rem auto 30rem;
+            gap: 2rem;
+            width: 96%;
+            margin: 1rem auto 4rem;
+        }
+
+        main aside {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 88vh;
+        }
+
+        /*Will be shown only on mobile and tablets*/
+        main aside button#close-btn {
+            display: none;
+        }
+
+        main aside .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            height: 4.2rem;
+            color: var(--color-gray-light);
+            position: relative;
+        }
+
+        main aside .sidebar a span {
+            font-size: 1.7rem;
+            margin-left: 3rem;
+            transition: all 300ms ease;
+        }
+
+        main aside .sidebar a.active {
+            background: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a.active:before {
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            background: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover {
+            color: var(--color-primary);
+        }
+
+        main aside .sidebar a:hover span {
+            margin-left: 2rem;
+        }
+
+        main aside .sidebar h4 {
+            font-weight: 600;
+        }
+
+
+        /*----------------------------------------------------------MIDDLE----------------------------------*/
+
+        /* ---------------------------------------Monthly Report ----------------------------------------------*/
+        main .monthly-report {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+            color: var(--color-dark);
+        }
+
+        main .monthly-report h1 {
+            font-weight: 900;
+            font-size: 2rem;
+
+        }
+
+        /* ---------------------------------------Fast Payment ----------------------------------------------*/
+        main .fast-payment {
+            margin-top: 2rem;
+            display: flex;
+            align-self: center;
+            gap: 2rem;
+        }
+
+        main .fast-payment .badges {
+            display: flex;
+            gap: 1rem;
+            align-self: center;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        main .fast-payment .badge span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            align-self: center;
+        }
+
+        main .fast-payment .badge {
+            padding: 0.5rem var(--card-padding);
+            background: var(--color-white);
+            border-radius: var(--border-radius-2);
+            display: flex;
+            align-self: center;
+            gap: 1rem;
+            transition: all 300ms ease;
+        }
+
+        main .fast-payment .badge:hover {
+            box-shadow: 0 0 1.5rem var(--color-gray-light);
+            cursor: pointer;
+        }
+
+        main .fast-payment .badge:first-child span {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            height: fit-content;
+            font-size: 1.5rem;
+        }
+
+        main .fast-payment .badge div {
+            display: flex;
+            gap: 2rem;
+            align-self: center;
+        }
+
+        /* --------------------------------------- Grafico ----------------------------------------------*/
+
+        canvas#chart {
+            background: var(--color-white);
+            max-width: 100%;
+            margin-top: 2rem;
+            border-radius: var(--card-border-radius);
+            padding: var(--card-padding);
+        }
+
+        /* --------------------------------------- Investments ----------------------------------------------*/
+
+        main section.right .investments {
+            background: var(--color-white);
+            border-radius: var(--card-border-radius);
+        }
+
+        main section.right .investments img {
+            width: 2.4rem;
+        }
+
+        main section.right .investments .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--card-padding);
+            padding-bottom: 0;
+        }
+
+        main section.right .investments .header a {
+            display: flex;
+            align-items: center;
+            color: var(--color-primary);
+        }
+
+        main section.right .investments .investment {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--card-padding);
+            border-bottom: 1px solid var(--color-light);
+            transition: all 300ms ease;
+        }
+
+        main section.right .investments .investment:last-child {
+            border: none;
+        }
+
+        main section.right .investments .investment:hover {
+            background: var(--color-light);
+            cursor: pointer;
+        }
+
+        /* --------------------------------------- RECENT TRANSACTIONS ----------------------------------------------*/
+        main .recent-transactions {
+            margin-top: 2rem;
+        }
+
+        main .recent-transactions img {
+            width: 2.2rem;
+        }
+
+        main .recent-transactions .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        main .recent-transactions .header a {
+            display: flex;
+            align-items: center;
+            color: var(--color-primary);
+        }
+
+        main .recent-transactions .transaction {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem var(--card-padding);
+            border-radius: var(--card-border-radius);
+        }
+
+        main .recent-transactions .transaction:hover {
+            background: var(--color-primary-light);
+            cursor: pointer;
+        }
+
+        main .recent-transactions .transaction .service {
+            display: flex;
+            gap: 1rem;
+        }
+
+        main .recent-transactions .transaction .service .icon {
+            padding: var(--padding-2);
+            border-radius: var(--border-radius-1);
+            display: flex;
+            align-items: center;
+            color: var(--color-dark);
+        }
+
+        main .recent-transactions .card-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--color-dark);
+        }
+
+        main .recent-transactions .card-details .card {
+            display: flex;
+            width: 3.6rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-2);
+        }
+
+        /* --------------------------------------- MEDIA QUERIES FOR TABLETS ----------------------------------------------*/
+        @media screen and (max-width: 1024px) {
+            nav .search-bar {
+                display: none;
+            }
+
+            nav .profile-area {
+                gap: 2rem;
+            }
+
+            nav .profile-area button#menu-btn {
+                display: inline;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            main aside {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                z-index: 3;
+                background: var(--color-white);
+                width: 22rem;
+                height: 100vh;
+                box-shadow: 2rem 0 2rem var(--color-primary-light);
+                display: none;
+                animation: showSidebar 500ms ease forwards;
+            }
+
+            @keyframes showSidebar {
+                to {
+                    left: 0;
+                }
+
+            }
+
+            main aside button#close-btn {
+                display: inline-block;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                z-index: 4;
+                background: transparent;
+                color: var(--color-dark);
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            main aside .sidebar {
+                margin-top: 4rem;
+            }
+
+            main aside .updates {
+                display: none;
+            }
+
+            main section.middle .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            main canvas {
+                margin: 3rem 0 1rem;
+            }
+
+            main section.right .recent-transactions {
+                margin-top: 3rem;
+            }
+        }
+
+        /* --------------------------------------- MEDIA QUERIES FOR MOBILE PHONES ----------------------------------------------*/
+        @media screen and(max-width:600px) {
+            nav .profile-area {
+                gap: 2.6rem;
+            }
+
+            nav .profile h5,
+            nav .profile span {
+                display: none;
+            }
+
+            main section.middle.cards {
+                grid-template-columns: 1fr;
+            }
+
+            main section.middle .fast-payment {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 3rem;
+                gap: 1.4rem;
+            }
+
+        }
+    </style>
+
+</body>
+
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem acesso</title>
+</head>
+
+<body>
+    <center>
+        <h1>Você não tem acesso a essa área.</h1>
+        <h2>Faça o cadastro em nossa plataforma e aproveite mais!</h2>
+        <button class="button" role="button"><span class="text"><a href="{% url 'home' %}">Vá para nossa
+                    plataforma</a></span></button>
+    </center>
+</body>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1,
+    h2 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+
+</html>
+{% endif %}
+
+{% endblock %}

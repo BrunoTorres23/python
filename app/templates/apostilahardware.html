@@ -1,0 +1,1266 @@
+{% block content %}
+    {% if request.user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Resumo da matéria </title>
+    <!--MATERIAL ICON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!--Google Fonts poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LINK DO VÍDEO = https://www.youtube.com/watch?v=FaBY9yAUtdg -->
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1">
+            <a href="{% url 'inicial' %}"><img style="width: 19%;" src="../static/img/logo fox.png" class="logo"></a>
+            <div class="search-bar">
+                <span class="material-icons-sharp primary"> search </span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active dark primary"> light_mode </span>
+                    <span class="material-icons-sharp primary">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <a href="{% url 'config' %}"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk3foOLIFyywPZxD0tOaPCXnsND2mzflXeGQ&usqp=CAU">
+                        </a>
+                    </div>
+                    <h5> 968576479@Aluno</h5>
+                    <a href="{% url 'config' %}"> <span class="material-icons-sharp primary"> expand_more </span> </a>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp primary"> menu </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--END OF NAVBAR-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp"> close </span>
+            </button>
+
+            <div class="sidebar">
+                <a href="{% url 'inicial' %}">
+                    <span class="material-icons-sharp"> house </span>
+                    <h4>Home</h4>
+                </a>
+
+                <a href="{% url 'material' %}">
+                    <span class="material-icons-sharp"> article </span>
+                    <h4>Material</h4>
+                </a>
+
+                <a href="{% url 'rendimento' %}">
+                    <span class="material-icons-sharp"> show_chart </span>
+                    <h4>Rendimento</h4>
+                </a>
+
+                <a href="{% url 'aulas' %}">
+                    <span class="material-icons-sharp"> ondemand_video </span>
+                    <h4>Aulas Disponíveis</h4>
+                </a>
+
+                <a href="{% url 'config' %}">
+                    <span class="material-icons-sharp"> manage_accounts </span>
+                    <h4>Configurações</h4>
+                </a>
+
+                <a href="/logouts/">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h4>Sair / LogOut</h4>
+                </a>
+
+
+            </div>
+
+        </aside>
+        <!--------------------END OF ASIDE------------------->
+        <center>
+
+            <section>
+                <h1 class="home-title">
+                    <span>Conheça os Conteúdos Interativos </span>
+                    <span>da matéria de Hardware</span>
+                    <img style="width: 100%; " src="../static/img/FichaHardware.png" alt="">
+                </h1>
+            </section>
+
+            <a href="../static/PDF/Hardware.pdf" class="btn btn-primary">Download de Ficha</a><br><br>
+            <a href="https://firebasestorage.googleapis.com/v0/b/teste-791b4.appspot.com/o/APK%2FFW%20mobile%200.9.3.apk?alt=media&token=69ad2da9-f59c-4323-9fa1-5a4406ebe3d1&_gl=1*1h5ms5g*_ga*MTc3NDM5Mzc5Ny4xNjg1MzA0NTM1*_ga_CW55HF8NVT*MTY4NjQwNjc4NC4yLjEuMTY4NjQwNjkyMy4wLjAuMA" class="btn btn-primary">Baixe o APK para acesso a Realidade Aumentada</a>
+
+
+            <section>
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/hdrCooler.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://cdn.dooca.store/7349/products/7nsdt77s8qwcbxbglao285pdwzjcnaqp7txh_640x640+fill_ffffff.png?v=1663960093&webp=0)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Cooler</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1>Este é o Cooler</h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>
+                                Um componente que extrai o calor de um chip da CPU ou de outros chips de execução que
+                                geram
+                                calor, como um processador gráfico — placa de vídeo (GPU). Em seu modo mais simples,
+                                funcionam
+                                como ventiladores que deslocam o ar quente do componente para o interior do gabinete,
+                                que por sua vez tem seus próprios coolers para extrair o calor do bloco fechado para o
+                                ambiente.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrFonte\ de\ alimentacao.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://imgs.ponto.com.br/1501219756/1xg.jpg?imwidth=500)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Fonte de alimentação</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1>Esta é a Fonte de alimentação</h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>A fonte de alimentação é responsável por fornecer energia elétrica para todos os
+                                componentes do computador.
+                                Ela converte a energia da tomada em voltagens apropriadas para os componentes, como a
+                                placa-mãe, processador,
+                                memória RAM, discos rígidos, placa de vídeo, entre outros. A fonte de alimentação possui
+                                uma série de cabos que conectam
+                                aos componentes do computador e fornece energia de acordo com a demanda de cada
+                                componente. É importante escolher uma
+                                fonte de alimentação adequada às necessidades do sistema, para garantir que todos os
+                                componentes recebam energia
+                                suficiente para funcionar corretamente.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrHd.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://microdream.co.uk/media/catalog/product/cache/9e0467f2deab4db66f35ab27c42ebe73/l/a/laptop2.5-sata_9.jpg)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">HDD</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1>Este é o HDD</h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>HDD é um acrônimo para Hard Disk Drive. No brasil, geralmente é chamado de HD ou disco
+                                rígido.
+                                Sua principal função é armazenar dados – desde o sistema operacional até os arquivos
+                                mais diversos. Normalmente,
+                                é o maior dispositivo de armazenamento de dados em um computador. <br>
+                                Um HD é um dispositivo de armazenamento não volátil, ou seja, os dados não são perdidos
+                                quando o computador é desligado.
+                                É um dispositivo de armazenamento secundário para armazenar dados permanentemente. Um HD
+                                interno, conectam-se a placa-me usando um cabo ATA,
+                                SCSI ou SATA e são alimentados por uma conexão PSU (power supply unit).</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrPlaca\ de\ video.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://shoppingdabahia.fbitsstatic.net/img/p/placa-de-video-afox-radeon-4gb-gddr5-128-bit-rx-560-96411/317758.jpg?w=600&h=600&v=202304181011&qs=ignore)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Placa de Video</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1>Esta é a Placa de Video </h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>A placa de vídeo é responsável por exibir imagens na tela e pode ser usada para rodar
+                                jogos e softwares que demandem processamento visual.
+                                A sua potência é importante para determinar a performance dos jogos, como qualidade e
+                                FPS, e como o PC lida com elementos gráficos pesados em programas de modelagem 3D.
+                                Além disso, a placa de vídeo pode ser usada como auxiliar em alguns programas, através
+                                da aceleração por hardware.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrPlaca\ mae.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://cdn.awsli.com.br/600x1000/254/254900/produto/36770353/7fe24207d3.jpg)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Placa Mãe</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1> Esta é a Placa Mãe </h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>Uma placa-mãe é uma placa de circuito que conecta e controla todos os componentes
+                                principais de um computador.
+                                Ela permite que a CPU, a memória RAM, o armazenamento e outros dispositivos se
+                                comuniquem entre si e com o sistema operacional.
+                                A placa-mãe também contém portas de entrada e saída para dispositivos externos, como
+                                teclado, mouse, monitor e rede. Em resumo, a placa-mãe é o "cérebro"
+                                do computador, responsável por garantir o funcionamento correto de todos os componentes.
+                            </h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrProcessador.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://images.tcdn.com.br/img/img_prod/740836/processador_amd_ryzen_r5_3400g_3_7ghz_am4_sem_cooler_tray_oem_11047_1_44fd567a835cd5833f6d0a6f30f6bee7.jpg)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Processador</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1> Este é o Processador </h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>O processador é a unidade central de processamento de um computador (CPU), que funciona
+                                como o cérebro do computador,
+                                pois interage e faz as conexões necessárias entre todos os programas instalados.
+                                Neste processo, ele também interpreta as informações enviadas pelos programas, realiza
+                                diversas operações,
+                                inclusive gerando a interface que nós interagimos quando usamos um computador.
+                                Os processadores são colocados na Placa-Mãe, por soquetes, e sua estrutura é composta
+                                por bilhões de transistores.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrSsd.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://images.kabum.com.br/produtos/fotos/113891/ssd-256-gb-husky-gaming-m-2-nvme-leitura-1800mb-s-e-gravacao-1300mb-s-hgml003_1671802350_original.jpg)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">SSD</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1>Este é o SDD</h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>O SSD (Solid State Drive) é um dispositivo de armazenamento de dados que utiliza chips
+                                de memória flash para armazenar
+                                informações de forma rápida e eficiente. Ao contrário dos discos rígidos tradicionais,
+                                os SSDs não possuem partes móveis,
+                                o que os torna mais rápidos, duráveis e silenciosos. Eles são capazes de acessar os
+                                dados armazenados com maior velocidade, o que
+                                resulta em um aumento significativo no desempenho do computador. Os SSDs estão
+                                disponíveis em vários formatos e capacidades, e são
+                                frequentemente usados em notebooks, desktops, servidores e outros dispositivos
+                                eletrônicos que requerem armazenamento rápido e confiável.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+
+                <div class="prolly-fing">
+                    <div class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" img style="background-image: url(../static/img/HdrMemoria\ ram.png)">
+                                <div class="inner">
+                                </div>
+                            </div>
+                            <div class="back"
+                                style="background-image: url(https://cdn.dooca.store/2394/products/xjfkbk5jkbq5fxpesvwwydmfy048d7fnugkw_640x640+fill_ffffff.png?v=1674492153&webp=0)">
+                                <div class="inner">
+                                    <p>
+                                        <h3 style="color: rgb(52, 48, 48);">Memória Ram</h3>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-fing-container">
+                        <div class="text-fing-title">
+                            <h1> Esta é a Memória Ram </h1>
+                        </div>
+                        <div class="text-fing-text">
+                            <h4>A memória RAM (Random Access Memory) é um tipo de memória volátil usada pelo computador
+                                para armazenar temporariamente
+                                dados e programas que estão sendo usados no momento. Ela é composta por chips que
+                                armazenam informações em células que podem ser
+                                acessadas aleatoriamente pelo processador. A memória RAM é uma das principais
+                                responsáveis pela velocidade do computador, pois quanto mais
+                                memória RAM disponível, mais rápida e eficiente será a execução dos programas. Quando o
+                                computador é desligado, todos os dados armazenados
+                                na memória RAM são perdidos, por isso é importante salvar o trabalho com frequência para
+                                não perder informações importantes.</h4>
+                        </div>
+                        <h3>Passe o mouse sobre a imagem ao lado para ver o item </h3>
+                    </div>
+                </div>
+
+
+
+
+            </section>
+
+
+    </main>
+    <!--END OF ASIDE-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        // Show or ride hide sidebar
+        const menuBtn = document.querySelector('#menu-btn');
+        const closeBtn = document.querySelector('#close-btn');
+        const sidebar = document.querySelector('aside');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.display = 'block';
+        })
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.display = 'none';
+        })
+
+        // change theme
+        const themeBtn = document.querySelector('.theme-btn');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            themeBtn.querySelector('span:first-child').classList.toggle('active');
+
+            themeBtn.querySelector('span:last-child').classList.toggle('active');
+        })
+
+        //print button
+        const printButton = document.querySelector(".print-button");
+        const printPage = () => window.print();
+
+    </script>
+
+<style>
+    /*ROOT CSS VARIABLES*/
+    :root {
+        --color-white: #ffffff;
+        --color-light: #f0eff5;
+        --color-gray-light: #86848c;
+        --color-gray-dark: #56555e;
+        --color-dark: #27282f;
+        --color-primary: rgb(230, 110, 19);
+        --color-success: rgb(34, 202, 75);
+        --color-danger: rgb(255, 67, 54);
+        --color-warning: rgb(234, 181, 7);
+        --color-purple: rgb(160, 99, 245);
+
+        --color-primary-light: rgb(230, 110, 19, 0.2);
+        --color-success-light: rgb(34, 202, 75, 0.2);
+        --color-danger-light: rgb(255, 67, 54, 0.2);
+        --color-warning-light: rgb(234, 181, 7, 0.2);
+        --color-purple-light: rgb(160, 99, 245, 0.2);
+
+        --card-padding: 1.6rem;
+        --padding-1: 1rem;
+        --padding-2: 8px;
+
+        --card-border-radius: 1.6rem;
+        --border-radius-1: 1rem;
+        --border-radius-2: 6px;
+    }
+
+    /*DARK THEME*/
+    .dark-theme {
+        --color-white: #131316;
+        --color-light: #23232a;
+        --color-dark: #ddd;
+        --color-gray-dark: #adacb5;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border: 0;
+        appearance: none;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        background: var(--color-light);
+        font-family: poppins, sans-serif;
+        min-height: 100vh;
+        color: var(color --color-dark);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        color: var(--color-dark);
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        color: var(--color-dark);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        color: var(--color-dark);
+    }
+
+    h4 {
+        font-size: 1rem;
+        color: var(--color-dark);
+    }
+
+    h5 {
+        font-size: 0.86rem;
+        font-weight: 500;
+        color: var(--color-dark);
+    }
+
+    h6 {
+        font-size: 0.76rem;
+        color: var(--color-dark);
+    }
+
+    p {
+        font-size: 0.86rem;
+        color: var(--color-dark);
+    }
+
+    small {
+        font-weight: 300;
+        font-size: 0.77rem;
+        color: var(--color-dark);
+    }
+
+    li {
+        font-size: 0.86rem;
+        color: var(--color-dark);
+    }
+
+    .text-muted {
+        color: var(--color-gray-light);
+    }
+
+    .primary {
+        color: var(--color-primary);
+    }
+
+    .danger {
+        color: var(--color-danger);
+    }
+
+    .success {
+        color: var(--color-success);
+    }
+
+    .purple {
+        color: var(--color-purple);
+    }
+
+    .bg-primary {
+        background: var(--color-primary);
+        box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+    }
+
+    .bg-danger {
+        background: var(--color-danger);
+        box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+    }
+
+    .bg-success {
+        background: var(--color-success);
+        box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+    }
+
+    .bg-purple {
+        background: var(--color-purple);
+        box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+    }
+
+    .bg-dark {
+        background: #27282f;
+        box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.2rem);
+    }
+
+    /*NAV BAR*/
+    nav {
+        width: 100%;
+        background: var(--color-white);
+        padding: 1rem 0;
+    }
+
+    nav .container1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 96%;
+        margin: 0 auto;
+    }
+
+    nav img.logo {
+        width: 7rem;
+    }
+
+    nav .search-bar {
+        background: var(--color-light);
+        padding: var(--padding-2) var(--card-padding);
+        width: 32vw;
+        border-radius: var(--border-radius-2);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--color-gray-light);
+        position: absolute;
+        left: 15%;
+    }
+
+    nav .search-bar input[type="search"] {
+        color: var(--color-dark);
+        background: transparent;
+        width: 100%;
+    }
+
+    nav .search-bar input[type="search"]::placeholder {
+        color: var(--color-gray-dark);
+    }
+
+    nav .profile-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+
+    nav .profile-area .theme-btn {
+        display: flex;
+        background: var(--color-light);
+        width: 5rem;
+        height: 2rem;
+        border-radius: var(--border-radius-2);
+        cursor: pointer;
+    }
+
+    nav .profile-area .theme-btn span {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+    }
+
+    nav .profile-area .theme-btn .active {
+        background: var(--color-dark);
+        border-radius: var(--border-radius-2);
+        color: var(--color-white);
+    }
+
+    nav .profile-area .profile {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    nav .profile-area .profile-photo {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    nav .profile-area button {
+        display: none;
+    }
+
+    /*ASIDE & SIDEBAR*/
+    main {
+        display: grid;
+        grid-template-columns: 16rem auto 4rem;
+        gap: 2rem;
+        width: 96%;
+        margin: 1rem auto 4rem;
+    }
+
+    main aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 88vh;
+    }
+
+    /*Will be shown only on mobile and tablets*/
+    main aside button#close-btn {
+        display: none;
+    }
+
+    main aside .sidebar a {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        height: 4.2rem;
+        color: var(--color-gray-light);
+        position: relative;
+    }
+
+    main aside .sidebar a span {
+        font-size: 1.7rem;
+        margin-left: 3rem;
+        transition: all 300ms ease;
+    }
+
+    main aside .sidebar a.active {
+        background: var(--color-white);
+        color: var(--color-primary);
+    }
+
+    main aside .sidebar a.active:before {
+        content: '';
+        width: 6px;
+        height: 100%;
+        position: absolute;
+        background: var(--color-primary);
+    }
+
+    main aside .sidebar a:hover {
+        color: var(--color-primary);
+    }
+
+    main aside .sidebar a:hover span {
+        margin-left: 2rem;
+    }
+
+    main aside .sidebar h4 {
+        font-weight: 600;
+    }
+
+    /*----------------------------------------------------------MIDDLE----------------------------------*/
+    .btn {
+        display: inline-block;
+        background: var(--color-white);
+        color: var(--color-black);
+        padding: 1rem 2rem;
+        border: 1px solid transparent;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+
+    .btn:hover {
+        background: #E29351;
+        color: var(--color-white);
+        border-color: var(--color-dark);
+    }
+
+    .btn-primary {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+
+    /*Written text*/
+    .home-title span {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        line-height: 1.2;
+    }
+
+    .home-title span::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        animation: a-ltr-after 2s cubic-bezier(.77, 0, .18, 1) forwards;
+        transform: translateX(-101%);
+    }
+
+    .home-title span::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-light);
+        animation: a-ltr-before 2s cubic-bezier(.77, 0, .18, 1) forwards;
+        transform: translateX(0);
+    }
+
+    .home-title span:nth-of-type(1)::before,
+    .home-title span:nth-of-type(1)::after {
+        animation-delay: 1s;
+    }
+
+    .home-title span:nth-of-type(2)::before,
+    .home-title span:nth-of-type(2)::after {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes a-ltr-after {
+        0% {
+            transform: translateX(-100%)
+        }
+
+        100% {
+            transform: translateX(101%)
+        }
+    }
+
+    @keyframes a-ltr-before {
+        0% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(200%)
+        }
+    }
+
+
+    /*Print Button*/
+    .print-button {
+        display: block;
+        padding: 15px;
+        margin: 20px auto;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: Poppins, sans-serif;
+        cursor: pointer;
+    }
+
+    .document,
+    .print-button {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.01), 0 4px 4px rgba(0, 0, 0, 0.02),
+            0 8px 8px rgba(0, 0, 0, 0.03), 0 18px 18px rgba(0, 0, 0, 0.04),
+            0 28px 28px rgba(0, 0, 0, 0.05), 0 38px 38px rgba(0, 0, 0, 0.06),
+            0 -15px 40px rgba(0, 0, 0, 0.06);
+    }
+
+
+
+    /*Image Side Text*/
+
+    .prolly-fing {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 60px 0;
+    }
+
+    .prolly-fing>div:first-child {
+        height: 360px;
+    }
+
+    .image-fing-container {
+        order: 2;
+        width: 45%;
+        max-width: 500px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-fing-container {
+        order: 1;
+        width: 45%;
+    }
+
+    .text-fing-title {
+        font: 500 28px Poppins, sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .text-fing-text {
+        font: 400 15px/1.5 Poppins, sans-serif;
+        margin-bottom: 40px;
+    }
+
+    .button-fing {
+        font: 500 17px Poppins, sans-serif;
+        background: #794654;
+        padding: 13px 25px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s ease-out all;
+    }
+
+    .button-fing:hover {
+        background: #a1475f;
+    }
+
+    @media screen and (max-width: 767px) {
+        .prolly-fing {
+            display: block;
+            padding: 60px 0;
+        }
+
+        .image-fing-container {
+            width: 80%;
+            display: block;
+            margin: auto;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .text-fing-container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 40px;
+        }
+    }
+
+    h2.background {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2.background:before {
+        border-top: 2px solid #dfdfdf;
+        content: "";
+        margin: 0 auto;
+        /* this centers the line to the full width specified */
+        position: absolute;
+        /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+
+    h2.background span {
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
+        background: #fff;
+        padding: 0 15px;
+        font-family: poppins, sans-serif;
+    }
+
+     /*Card to image side*/
+
+
+     .col {
+        width: calc(20% - 2rem);
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+    .container {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+
+    .front,
+    .back {
+        background-size: cover;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        background-position: center;
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        text-align: center;
+        width: 300px;
+        min-height: 300px;
+        height: auto;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+
+    .front:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        opacity: .6;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px;
+    }
+
+    .container:hover .front,
+    .container:hover .back {
+        -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+    }
+
+    .inner {
+        -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 85%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        -webkit-perspective: inherit;
+        perspective: inherit;
+        z-index: 2;
+    }
+
+    .container .back {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container .front {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container:hover .back {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .container:hover .front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .front .inner p {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .back .inner p {
+        text-align: justify;
+        padding: 10px;
+    }
+
+    .front .inner p:after {
+        content: '';
+        width: 4rem;
+        height: 2px;
+        position: absolute;
+        background: #2a6fa4;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -.75rem;
+    }
+
+    .front .inner span {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: poppins, sans-serif;
+        font-weight: 300;
+    }
+
+    /* --------------------------------------- MEDIA QUERIES FOR TABLETS ----------------------------------------------*/
+    @media (max-width: 1030px) {
+        nav .search-bar {
+            display: none;
+        }
+
+        nav .profile-area {
+            gap: 2rem;
+        }
+
+        nav .profile-area button#menu-btn {
+            display: inline;
+            background: transparent;
+            color: var(--color-dark);
+        }
+
+        main {
+            grid-template-columns: 1fr;
+        }
+
+        main aside {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 3;
+            background: var(--color-white);
+            width: 22rem;
+            height: 100vh;
+            box-shadow: 2rem 0 2rem var(--color-primary-light);
+            display: none;
+            animation: showSidebar 500ms ease forwards;
+        }
+
+        @keyframes showSidebar {
+            to {
+                left: 0;
+            }
+
+        }
+
+        main aside button#close-btn {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 4;
+            background: transparent;
+            color: var(--color-dark);
+        }
+
+        .front,
+    .back {
+        width: 280px;
+        height: 250px;
+
+    }
+ }
+
+    /* --------------------------------------- MEDIA QUERIES FOR MOBILE PHONES ----------------------------------------------*/
+    @media (max-width:676px) {
+        nav .profile-area {
+            gap: 2.6rem;
+        }
+
+        nav .profile h5,
+        nav .profile span {
+            display: none;
+        }
+
+        #x {
+            margin-top: 75%;
+        }
+
+    }
+</style>
+
+
+</body>
+
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem acesso</title>
+</head>
+
+<body>
+    <center>
+        <h1>Você não tem acesso a essa área.</h1>
+        <h2>Faça o cadastro em nossa plataforma e aproveite mais!</h2>
+        <button class="button" role="button"><span class="text"><a href="{% url 'home' %}">Vá para nossa
+                    plataforma</a></span></button>
+    </center>
+</body>
+<style>
+    body {
+        background: url(https://wallpaperaccess.com/full/82704.jpg);
+    }
+
+    h1,
+    h2 {
+        font-family: poppins, sans-serif;
+        color: white;
+    }
+
+    button {
+        align-items: center;
+        background-image: linear-gradient(144deg, #ff7700, #cd946d, #ba6b2d);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: #8b5925 0 15px 30px -5px;
+        box-sizing: border-box;
+        display: flex;
+        font-family: poppins, sans-serif;
+        font-size: 20px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+
+    }
+
+    .button:active,
+    .button:hover {
+        outline: 0;
+
+    }
+
+    .button:hover span {
+        background: none;
+
+    }
+
+    .button span {
+        background-color: #cd946d;
+        padding: 16px 24px;
+
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+
+    }
+
+    a {
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+
+</html>
+{% endif %}
+
+{% endblock %}
